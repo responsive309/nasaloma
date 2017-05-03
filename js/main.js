@@ -22,8 +22,8 @@ angular.module('nasa-central', ['ui.router','hSweetAlert'])
 .controller('mainCtrl', function($scope, $stateParams, $state, sweet, spaceshipService) {
 
     spaceshipService.getAllFlicks().then(function(res) {
-        $scope.totalFlicks = res.data.length;
-        console.log('getAllFlicks result length: ', res.data.length);
+        $scope.flicks = res.data.photos;
+        console.log('getAllFlicks result: ', $scope.flicks);
         
       })
 })
