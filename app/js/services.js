@@ -8,26 +8,23 @@ angular.module('nasa-central')
         apiUrl: "https://api.flickr.com/services/rest/"
     };
 
-    var offset = {
-        page: 1,
-        per_page: 20
-    };
+    var photosPerPage = 20;
 
-    this.getAllPhotos = function() {
+    this.getAllPhotos = function(page) {
         return $http({
             method: 'GET',
             url: config.apiUrl + "?method=flickr.people.getPublicPhotos&api_key=" 
-                + config.apiKey + "&user_id=24662369@N07&format=json&nojsoncallback=1&page=" + offset.page 
-                + "&per_page=" + offset.per_page
+                + config.apiKey + "&user_id=24662369@N07&format=json&nojsoncallback=1&page=" + page 
+                + "&per_page=" + photosPerPage
         });
     };
 
-    this.getPhotosByColor = function(color) {
+    this.getPhotosByColor = function(color, page) {
         return $http({
             method: 'GET',
             url: config.apiUrl + "?method=flickr.photos.search&text=nasa&api_key=" 
-                + config.apiKey + "&user_id=24662369@N07&format=json&nojsoncallback=1&page=" + offset.page 
-                + "&per_page=" + offset.per_page + "&color_codes=" + color
+                + config.apiKey + "&user_id=24662369@N07&format=json&nojsoncallback=1&page=" + page 
+                + "&per_page=" + photosPerPage + "&color_codes=" + color
         });
     };
 

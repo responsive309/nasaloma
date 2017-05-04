@@ -1,25 +1,6 @@
 'use strict';
 
-angular.module('nasa-central', ['ui.router', 'hSweetAlert'])
-
-.config(function($stateProvider, $urlRouterProvider, $locationProvider){
-    //getting rid the the '#' in URLs
-    // $locationProvider.html5Mode(true);
-
-    $stateProvider
-        .state('main', {url: '/main', templateUrl: 'partials/main.html', controller: 'mainCtrl'})
-        .state('upcoming', {url: '/upcoming', templateUrl: 'partials/upcoming.html', controller: 'upcomingCtrl'})
-        ;
-
-        $urlRouterProvider.otherwise('/main');
-
-})
-
-.run(function($location, $timeout, $state, $window){
-
-})
-
-//controllers-----------------------------------------------------------------------------------------------------------------------------------------
+angular.module('nasa-central')
 
 .controller('mainCtrl', function($scope, $stateParams, $state, sweet, spaceshipService) {
 
@@ -42,23 +23,33 @@ angular.module('nasa-central', ['ui.router', 'hSweetAlert'])
     }
 
     $scope.allPhotos = function(){
-
+        var page = 1;
+        
         $scope.photos = [];
 
-        spaceshipService.getAllPhotos().then(function(res) {
+        spaceshipService.getAllPhotos(page).then(function(res) {
             $scope.photoCount = res.data.photos.total;
 
             generateGallery(res.data.photos.photo);
 
-            console.log("$scope.photos: ", $scope.photos);
+            $scope.morePhotos = function(){                
+                spaceshipService.getAllPhotos(++page).then(function(res) {
+                    $scope.photoCount = res.data.photos.total;
+
+                    generateGallery(res.data.photos.photo);
+
+                })
+            }
             
         })
     }
 
     $scope.photosByColor = function(color){
+        var page = 1;
+
         $scope.photos = [];
 
-        spaceshipService.getPhotosByColor(color).then(function(res) {
+        spaceshipService.getPhotosByColor(color, page).then(function(res) {
             $scope.photoCount = res.data.photos.total;
 
             generateGallery(res.data.photos.photo);
@@ -72,7 +63,4 @@ angular.module('nasa-central', ['ui.router', 'hSweetAlert'])
     
 })
 
-.controller('upcomingCtrl', function($scope, $stateParams, $state, $location) {
-
-})
 ;
