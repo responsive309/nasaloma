@@ -148,6 +148,23 @@ body {
     font-weight: 600
 }
 
+.btn:hover {
+    color: silver !important;
+}
+
+.btn-gradient {
+    color: #fff;
+    border-color: #fff;
+    opacity: 0.75;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background: #000;
+    background: -webkit-linear-gradient(to right, red, green, blue, yellow); 
+    background: -o-linear-gradient(to right, red, green, blue, yellow);
+    background: -moz-linear-gradient(to right, red, green, blue, yellow);
+    background: linear-gradient(to right, red, green, blue, yellow);
+}
+
 .btn-section {
     margin-bottom: 12px
 }
@@ -204,4 +221,12 @@ body {
     opacity: 0.75;
     font-weight: 600;
     margin-bottom: 10px
+}
+
+.btn-more {
+    display: block;
+    width: 40%;
+    margin: auto;
+    margin-top: 2%;
+    padding: 10px;
 }
