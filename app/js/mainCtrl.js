@@ -2,7 +2,7 @@
 
 angular.module('nasa-central')
 
-.controller('mainCtrl', function($scope, $stateParams, $state, sweet, spaceshipService) {
+.controller('mainCtrl', function($scope, $stateParams, $state, spaceshipService) {
 
     var generateGallery = function(photoData){
 

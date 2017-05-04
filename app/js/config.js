@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('nasa-central', ['ui.router', 'hSweetAlert'])
+angular.module('nasa-central', ['ui.router'])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider){
     //getting rid the the '#' in URLs
