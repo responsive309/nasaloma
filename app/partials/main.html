@@ -59,7 +59,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="col-lg-4 col-md-4 col-xs-12 thumb" ng-repeat="photo in photos track by $index">
+                    <div class="col-lg-4 col-md-4 col-xs-12" ng-repeat="photo in photos track by $index">
                         <img ng-click="viewPhotoDetail($index)" data-toggle="modal" data-target="#photo-modal" class="img-responsive" ng-src="{{photo.url}}" alt="Image M.I.A">
                     </div>
                 </div>
@@ -74,13 +74,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="myModalLabel">{{photos[currentIndex].title}}
+                    <h4 class="photo-modal-title">{{photos[currentIndex].title}}</h4>
                 <div class="modal-body">
                     <img class="img-responsive" ng-src="{{photos[currentIndex].urlLarge}}" alt="Image M.I.A">
                 </div>
                 <div class="modal-footer">
-                    <button ng-if="currentIndex > 0" type="button" class="btn btn-default pull-left" ng-click="viewPhotoDetail(currentIndex - 1)">Prev</button>
-                    <button ng-if="currentIndex < photos.length - 1" type="button" class="btn btn-default pull-right" ng-click="viewPhotoDetail(currentIndex + 1)">Next</button>
+                    <button ng-if="currentIndex > 0" type="button" class="btn btn-default btn-nav pull-left" ng-click="viewPhotoDetail(currentIndex - 1)">Prev</button>
+                    <button ng-if="currentIndex < photos.length - 1" type="button" class="btn btn-default btn-nav pull-right" ng-click="viewPhotoDetail(currentIndex + 1)">Next</button>
                     <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
                 </div>
             </div>
