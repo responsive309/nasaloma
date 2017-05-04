@@ -7,7 +7,7 @@ angular.module('nasa-central')
     var generateGallery = function(photoData){
 
         for(var p = 0; p < photoData.length; p++){
-
+            
             var photo = {};
 
             photo.url = 'https://farm' + photoData[p].farm + '.staticflickr.com/' + photoData[p].server +
@@ -64,6 +64,11 @@ angular.module('nasa-central')
             }
             
         })
+    }
+
+    $scope.viewPhotoDetail = function(photo) {
+        $scope.currentPhoto = photo;
+        console.log('$scope.currentPhoto: ', $scope.currentPhoto);
     }
 
     $scope.allPhotos();
