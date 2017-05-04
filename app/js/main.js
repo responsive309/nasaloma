@@ -23,15 +23,32 @@ angular.module('nasa-central', ['ui.router', 'hSweetAlert'])
 
 .controller('mainCtrl', function($scope, $stateParams, $state, sweet, spaceshipService) {
 
+    var generateGallery = function(photoData){
+
+        for(var p = 0; p < photoData.length; p++){
+
+            var photo = {};
+
+            photo.url = 'https://farm' + photoData[p].farm + '.staticflickr.com/' + photoData[p].server +
+                        '/' + photoData[p].id + '_' + photoData[p].secret + '.jpg';
+            
+            photo.urlLarge = 'https://farm' + photoData[p].farm + '.staticflickr.com/' + photoData[p].server +
+                        '/' + photoData[p].id + '_' + photoData[p].secret + '_b.jpg';
+
+            photo.title = photoData[p].title;
+
+            $scope.photos.push(photo);
+        }
+    }
+
     $scope.allPhotos = function(){
+
         $scope.photos = [];
 
         spaceshipService.getAllPhotos().then(function(res) {
             $scope.photoCount = res.data.photos.total;
 
-            for(var p = 0; p < res.data.photos.photo.length; p++){
-                $scope.photos.push(res.data.photos.photo[p]);
-            }
+            generateGallery(res.data.photos.photo);
 
             console.log("$scope.photos: ", $scope.photos);
             
@@ -44,9 +61,7 @@ angular.module('nasa-central', ['ui.router', 'hSweetAlert'])
         spaceshipService.getPhotosByColor(color).then(function(res) {
             $scope.photoCount = res.data.photos.total;
 
-            for(var p = 0; p < res.data.photos.photo.length; p++){
-                $scope.photos.push(res.data.photos.photo[p]);
-            }
+            generateGallery(res.data.photos.photo);
 
             console.log("$scope.photos: ", $scope.photos);
             
