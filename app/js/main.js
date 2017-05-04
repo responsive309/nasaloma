@@ -3,6 +3,8 @@
 angular.module('nasa-central', ['ui.router','hSweetAlert'])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider){
+    //getting rid the the '#' in URLs
+    $locationProvider.html5Mode(true);
 
     $stateProvider
         .state('main', {url: '/main', templateUrl: 'partials/main.html', controller: 'mainCtrl'})
