@@ -54,7 +54,14 @@ angular.module('nasa-central')
 
             generateGallery(res.data.photos.photo);
 
-            console.log("$scope.photos: ", $scope.photos);
+            $scope.morePhotos = function(){                
+                spaceshipService.getPhotosByColor(color, ++page).then(function(res) {
+                    $scope.photoCount = res.data.photos.total;
+
+                    generateGallery(res.data.photos.photo);
+
+                })
+            }
             
         })
     }
