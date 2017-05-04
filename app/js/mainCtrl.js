@@ -66,9 +66,8 @@ angular.module('nasa-central')
         })
     }
 
-    $scope.viewPhotoDetail = function(photo) {
-        $scope.currentPhoto = photo;
-        console.log('$scope.currentPhoto: ', $scope.currentPhoto);
+    $scope.viewPhotoDetail = function(index) {
+        $scope.currentIndex = index;
     }
 
     $scope.allPhotos();
