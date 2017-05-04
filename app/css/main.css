@@ -143,3 +143,65 @@ body {
     width: 75%;
     padding-top: 8px;
 }
+
+.photo-counter {
+    font-weight: 600
+}
+
+.btn-section {
+    margin-bottom: 12px
+}
+
+.btn-red {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+    opacity: 0.75;
+    font-weight: 600;
+    margin-bottom: 10px
+}
+
+.btn-green {
+    color: #fff;
+    background-color: green;
+    border-color: green;
+    opacity: 0.75;
+    font-weight: 600;
+    margin-bottom: 10px
+}
+
+.btn-blue {
+    color: #fff;
+    background-color: blue;
+    border-color: blue;
+    opacity: 0.75;
+    font-weight: 600;
+    margin-bottom: 10px
+}
+
+.btn-yellow {
+    color: #000;
+    background-color: yellow;
+    border-color: yellow;
+    opacity: 0.75;
+    font-weight: 600;
+    margin-bottom: 10px
+}
+
+.btn-purple {
+    color: #fff;
+    background-color: purple;
+    border-color: purple;
+    opacity: 0.75;
+    font-weight: 600;
+    margin-bottom: 10px
+}
+
+.btn-black {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+    opacity: 0.75;
+    font-weight: 600;
+    margin-bottom: 10px
+}
