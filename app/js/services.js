@@ -13,12 +13,21 @@ angular.module('nasa-central')
         per_page: 20
     };
 
-    this.getAllFlicks = function() {
+    this.getAllPhotos = function() {
         return $http({
             method: 'GET',
             url: config.apiUrl + "?method=flickr.people.getPublicPhotos&api_key=" 
                 + config.apiKey + "&user_id=24662369@N07&format=json&nojsoncallback=1&page=" + offset.page 
                 + "&per_page=" + offset.per_page
+        });
+    };
+
+    this.getPhotosByColor = function(color) {
+        return $http({
+            method: 'GET',
+            url: config.apiUrl + "?method=flickr.photos.search&text=nasa&api_key=" 
+                + config.apiKey + "&user_id=24662369@N07&format=json&nojsoncallback=1&page=" + offset.page 
+                + "&per_page=" + offset.per_page + "&color_codes=" + color
         });
     };
 
