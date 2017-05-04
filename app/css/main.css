@@ -166,7 +166,7 @@ body {
 }
 
 .btn-section {
-    margin-bottom: 12px
+    margin-bottom: 8px
 }
 
 .btn-red {
@@ -238,4 +238,10 @@ body {
 .photo-modal-title {
     font-size: 16px;
     text-align: center;
+}
+
+.brief-view {
+    cursor: pointer;
+    margin-top: 3px;
+    margin-bottom: 5px;
 }
