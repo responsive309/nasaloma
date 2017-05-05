@@ -1,13 +1,11 @@
-# mi NASA su NASA
+Live Demo: [NASALOMA](https://ripefruitsuoft.herokuapp.com).
 
-### It seems like on NASA's official flickr page, users cannot browse their photos by color...
+# It seems like on NASA's official flickr page, users cannot browse their photos by color, now that's a problem.
 
-### That's ok, NASALOMA got you covered.
+# But that's ok, NASALOMA is your solution! This responsive app powered by AngularJS allows you to browse photos posted by NASA's official Flickr account by color.
 
-### This responsive app powered by AngularJS allows you to browse photos posted by NASA's official Flickr account by color.
+###Installation Instruction
+`1. npm install`
+`2. npm install`
 
-##Installation Instruction
-### 1. npm install
-### 2. npm start
-
-### Open your browser and go to localhost:8000, enjoy.
+# Open your browser and go to [localhost:8000](http://localhost:8000), enjoy.

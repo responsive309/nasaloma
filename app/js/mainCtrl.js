@@ -38,10 +38,16 @@ angular.module('nasa-central')
 
                     generateGallery(res.data.photos.photo);
 
-                })
-            }
+                }, function(err) {
+                        console.log('Oops, you encountered an error: ', err);
+                        }
+                    )
+                }
             
-        })
+            }, function(err) {
+                console.log('Oops, you encountered an error: ', err);
+            }
+        )
     }
 
     $scope.photosByColor = function(color){
@@ -60,10 +66,15 @@ angular.module('nasa-central')
 
                     generateGallery(res.data.photos.photo);
 
-                })
+                }, function(err) {
+                    console.log('Oops, you encountered an error: ', err);
+                    }
+                )
             }
             
-        })
+        }, function(err) {
+                console.log('Oops, you encountered an error: ', err);
+            })
     }
 
     $scope.viewPhotoDetail = function(index) {
